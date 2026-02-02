@@ -1,0 +1,15 @@
+Problem
+
+Engineering students rely on scattered PDFs, notes, and textbooks. Searching and understanding concepts during exam preparation is time-consuming and inefficient.
+
+Proposed Solution
+
+Develop an AI-powered Study Buddy that allows students to:
+
+Upload subject notes and PDFs
+
+Ask natural-language questions
+
+Receive accurate, context-aware answers strictly from their study material using RAG
+
+Access the system easily via a containerized deployment using Docker
