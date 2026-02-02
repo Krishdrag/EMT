@@ -1,8 +1,77 @@
-flask
+Software Requirements
+Operating System
+
+Windows 10 / 11
+(Linux / macOS also supported)
+
+Development Tools
+
+Python 3.10 or above
+
+Docker Desktop
+
+VS Code (or any code editor)
+
+Git (optional)
+
+Backend & AI
+
+FastAPI (backend API)
+
+Uvicorn (ASGI server)
+
+LangChain (RAG pipeline)
+
+SentenceTransformers / OpenAI Embeddings
+
+FAISS or ChromaDB (vector database)
+
+PyPDF / PDFPlumber (PDF reading)
+
+Frontend
+
+HTML, CSS, JavaScript
+(or React – optional)
+
+Containerization
+
+Docker
+
+Docker Compose
+
+📦 Python Libraries (Backend)
+
+You can directly use this in requirements.txt:
+
+fastapi
+uvicorn
 langchain
-langchain-community
+chromadb
 sentence-transformers
-faiss-cpu
 pypdf
-transformers
-torch
+python-multipart
+
+
+(If using OpenAI API, add openai)
+
+⚙️ Functional Requirements (IMPORTANT for Report)
+
+The system shall:
+
+Allow students to upload PDF study material
+
+Extract and process text from uploaded PDFs
+
+Convert text into vector embeddings
+
+Store embeddings in a vector database
+
+Accept user questions in natural language
+
+Retrieve relevant study content using RAG
+
+Generate accurate answers from retrieved content only
+
+Display responses via a web interface
+
+Run the complete system using Docker containers
