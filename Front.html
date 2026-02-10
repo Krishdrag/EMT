@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Study Buddy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background: #1e1e2f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1e1e2f;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .upload-box {
+            border: 2px dashed #aaa;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            background: #1e1e2f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #34345e;
+        }
+
+        .answer-box {
+            background: #eef1f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1e1e2f;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AI Study Buddy</h1>
+    <p>Your Personal AI Assistant for Exam Preparation</p>
+</header>
+
+<section>
+    <h2>📄 Upload Study Material</h2>
+    <p>Upload your PDFs, notes, or documents. The AI will answer questions strictly from this content.</p>
+
+    <div class="upload-box">
+        <p><strong>Upload PDF / Notes</strong></p>
+        <input type="file" disabled>
+        <p style="font-size: 12px; color: #777;">(Backend handled using RAG + FAISS)</p>
+    </div>
+</section>
+
+<section>
+    <h2>❓ Ask a Question</h2>
+    <p>Ask your doubts in natural language.</p>
+
+    <textarea placeholder="Example: Explain Round Robin Scheduling with example..."></textarea>
+    <br>
+    <button onclick="showAnswer()">Get Answer</button>
+
+    <div class="answer-box" id="answer" style="display:none;">
+        <strong>AI Answer:</strong>
+        <p>
+            This answer is generated using Retrieval-Augmented Generation (RAG),
+            strictly from the uploaded study material. Relevant document sections
+            were retrieved and used as context to ensure accuracy and syllabus alignment.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>⚙️ How It Works</h2>
+    <ol>
+        <li>User uploads study material</li>
+        <li>Text is extracted and split into chunks</li>
+        <li>Chunks are converted into vector embeddings</li>
+        <li>Embeddings are stored in FAISS vector database</li>
+        <li>User query retrieves relevant chunks</li>
+        <li>LLM generates answer from retrieved context</li>
+    </ol>
+</section>
+
+<section>
+    <h2>🚀 Key Features</h2>
+    <ul>
+        <li>Syllabus-based answers</li>
+        <li>No AI hallucination</li>
+        <li>Fast exam revision</li>
+        <li>Docker-based deployment</li>
+        <li>Secure and offline capable</li>
+    </ul>
+</section>
+
+<section>
+    <h2>🧠 Technologies Used</h2>
+    <ul>
+        <li>Python</li>
+        <li>Flask / FastAPI</li>
+        <li>Sentence Transformers</li>
+        <li>FAISS Vector Database</li>
+        <li>Large Language Model (LLM)</li>
+        <li>Docker</li>
+    </ul>
+</section>
+
+<footer>
+    <p>AI Study Buddy | Mini Project | Developed by Student</p>
+</footer>
+
+<script>
+    function showAnswer() {
+        document.getElementById("answer").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
